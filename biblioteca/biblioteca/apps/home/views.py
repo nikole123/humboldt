@@ -227,7 +227,7 @@ def login_view(request):
 			if formulario.is_valid():
 				usu = formulario.cleaned_data['usuario']
 				pas = formulario.cleaned_data['clave']
-				usuario = authenticate(username = usuario, password = pas)
+				usuario = authenticate(username = usu, password = pas)
 				if usuario is not None and usuario.is_active:
 					login(request, usuario)
 					return HttpResponseRedirect('/')
